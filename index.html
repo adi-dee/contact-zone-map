@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Contact Zone Map</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h2 >Interactive Contact Zone Map (Europe)</h2>
+        <p>Click on the map to select a location; latitude and longitude will auto-fill.</p>
+    </div>
+
+<div class="map-container">
+  <div id="map"></div>
+  <form id="pinForm">
+    <p><b>Add a contact zone experience:</b></p>
+    <input type="text" id="nickname" placeholder="Nickname (optional)">
+    <textarea id="story" placeholder="Your story" required></textarea>
+    <input type="file" id="image" accept="image/*">
+    <input type="text" id="lat" placeholder="Latitude" required>
+    <input type="text" id="lng" placeholder="Longitude" required>
+    <button type="submit">Add Pin</button>
+  </form>
+</div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Supabase + Map Logic -->
+<script type="module" src="main.js"></script>
+
+
+</body>
+</html>
