@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Contact Zone Map</title>
   
@@ -15,12 +16,11 @@
 
     <div class="header">
         <h2 >Interactive Contact Zone Map (Europe)</h2>
-        <p>Click on the map to select a location; latitude and longitude will auto-fill.</p>
     </div>
 
 <div class="map-container">
   <div id="map"></div>
-  <form id="pinForm">
+  <!-- <form id="pinForm">
     <p><b>Add a contact zone experience:</b></p>
     <input type="text" id="nickname" placeholder="Nickname (optional)">
     <textarea id="story" placeholder="Your story" required></textarea>
@@ -28,7 +28,42 @@
     <input type="text" id="lat" placeholder="Latitude" required>
     <input type="text" id="lng" placeholder="Longitude" required>
     <button type="submit">Add Pin</button>
+  </form> -->
+  <div id="contactZoneForm" class="contact-zone-form collapsed">
+  <div class="form-toggle">
+    <span class="arrow">&#x25B2;</span> <!-- up arrow -->
+    <span>Add Your Contact Zone Experience</span>
+  </div>
+
+  <form id="pinForm" class="form-content">
+    <label for="nickname">Nickname*</label>
+    <input type="text" id="nickname" required>
+
+    <label for="story">Contact Zone Story (up to 92 notes)*</label>
+    <textarea id="story" required></textarea>
+
+    <label for="image">Upload Image (jpg/gif/png)</label>
+    <input type="file" id="image" accept="image/*">
+
+    <label for="email">Email (not public)</label>
+    <input type="email" id="email">
+
+    <label class="checkbox">
+      <input type="checkbox" id="approval"> I hereby approve to publish this data on the contact zone website...
+    </label>
+
+    <input type="text" id="lat" placeholder="Latitude" required>
+    <input type="text" id="lng" placeholder="Longitude" required>
+
+
+    <button type="submit" class="send-btn" disabled>SEND ➤</button>
   </form>
+</div>
+<footer class="map-footer">
+  © <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> contributors 
+  | © <a href="https://carto.com/" target="_blank" rel="noopener">CARTO</a>
+</footer>
+
 </div>
 
 <!-- Leaflet -->

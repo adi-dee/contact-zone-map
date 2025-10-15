@@ -76,9 +76,9 @@ const peachIcon = L.icon({
     }
 
     data.forEach(p=>{
-      let popupContent = `<b>${p.title || p.nickname}</b><br>${p.description || p.story}`;
+      let popupContent = `<b>As told by ${p.title || p.nickname}</b><br><br>${p.description || p.story}`;
       if (p.image_url) {
-        popupContent += `<br><img src="${p.image_url}" style="max-width:150px; margin-top:5px;">`;
+        popupContent += `<br><br><img src="${p.image_url}" style="margin-top:5px;">`;
       }
       // const newLocal = L.marker([p.lat, p.lng]).addTo(map).bindPopup(popupContent);
       L.marker([p.lat, p.lng], { icon: greenIcon }).addTo(map).bindPopup(popupContent);
@@ -116,6 +116,8 @@ document.getElementById("pinForm").addEventListener("submit", async (e)=>{
   const lat = parseFloat(document.getElementById("lat").value);
   const lng = parseFloat(document.getElementById("lng").value);
   const imageFile = document.getElementById("image").files[0];
+  const email = document.getElementById("email").value || null;
+
 
   let image_url = null;
 
@@ -152,7 +154,8 @@ if (imageFile) {
       lat, 
       lng, 
       status: "pending", 
-      image_url 
+      image_url,
+      email
     }
   ]);
 
@@ -175,3 +178,24 @@ if (imageFile) {
 
   // Load on page start
   loadPins();
+  
+
+
+  // Collapsible contact zone form
+const formBox = document.getElementById('contactZoneForm');
+const toggle = formBox.querySelector('.form-toggle');
+const form = document.getElementById('pinForm');
+const sendBtn = form.querySelector('.send-btn');
+const approvalBox = document.getElementById('approval');
+
+// Toggle collapse/expand
+toggle.addEventListener('click', () => {
+  formBox.classList.toggle('collapsed');
+  const arrow = toggle.querySelector('.arrow');
+  arrow.innerHTML = formBox.classList.contains('collapsed') ? '&#x25B2;' : '&#x25BC;';
+});
+
+// Enable SEND button only when checkbox checked
+approvalBox.addEventListener('change', () => {
+  sendBtn.disabled = !approvalBox.checked;
+});
