@@ -21,13 +21,36 @@ const map = L.map('map', {
 
 
 
-// Minimalist normal-color map tiles (Carto Voyager Light)
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/">OSM</a> &copy; CARTO',
   subdomains: 'abcd',
   maxZoom: 19
 }).addTo(map);
-  
+
+const greenIcon = L.icon({
+  iconUrl: 'data:image/svg+xml;base64,' + btoa(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 30 40">
+      <path fill="#9AAA7A" d="M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25C30 7 23 0 15 0z"/>
+    </svg>
+  `),
+  iconSize: [30, 40],
+  iconAnchor: [15, 40],
+  popupAnchor: [0, -40]
+});
+
+// Peach temporary marker (#D9A293)
+const peachIcon = L.icon({
+  iconUrl: 'data:image/svg+xml;base64,' + btoa(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 30 40">
+      <path fill="#D9A293" d="M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25C30 7 23 0 15 0z"/>
+    </svg>
+  `),
+  iconSize: [30, 40],
+  iconAnchor: [15, 40],
+  popupAnchor: [0, -40]
+});
+
+
 
   // Load pins
   async function loadPins(){
@@ -46,7 +69,9 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       if (p.image_url) {
         popupContent += `<br><img src="${p.image_url}" style="max-width:150px; margin-top:5px;">`;
       }
-      L.marker([p.lat, p.lng]).addTo(map).bindPopup(popupContent);
+      // const newLocal = L.marker([p.lat, p.lng]).addTo(map).bindPopup(popupContent);
+      L.marker([p.lat, p.lng], { icon: greenIcon }).addTo(map).bindPopup(popupContent);
+
     });
   }
 
@@ -67,7 +92,10 @@ map.on("click", (e) => {
   }
 
   // Add new temporary marker
-  lastMarker = L.marker([lat, lng]).addTo(map).bindPopup("Selected location").openPopup();
+  lastMarker = L.marker([lat, lng], { icon: peachIcon })
+    .addTo(map)
+    .bindPopup("Selected location")
+    .openPopup();
 });
   // Handle form submission
 document.getElementById("pinForm").addEventListener("submit", async (e)=>{

@@ -21,8 +21,10 @@
         width: 100%;
         position: relative;
         z-index: 0;
-     }
+          background-color: #dbe8ef; /* soft blue from your NGO palette */
+  filter: brightness(1.05) contrast(0.95);
 
+     }
 
     #pinForm {
       background: #f9f9f9;
@@ -43,5 +45,7 @@
         width: fit-content !important;
     }
 
+
+    
 
 
