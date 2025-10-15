@@ -89,6 +89,7 @@ a:hover {
 
     .leaflet-popup-content{
         width: fit-content !important;
+        line-height: revert;
     }
 
     /* --- Leaflet popup styling (TCZ brand) --- */

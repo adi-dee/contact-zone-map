@@ -76,7 +76,7 @@ const peachIcon = L.icon({
     }
 
     data.forEach(p=>{
-      let popupContent = `<b>As told by ${p.title || p.nickname}</b><br><br>${p.description || p.story}`;
+      let popupContent = `<h3>As told by <b>${p.title || p.nickname}</b></h3>${p.description || p.story}`;
       if (p.image_url) {
         popupContent += `<br><br><img src="${p.image_url}" style="margin-top:5px;">`;
       }
