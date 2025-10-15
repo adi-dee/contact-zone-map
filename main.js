@@ -27,10 +27,20 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png
   maxZoom: 19
 }).addTo(map);
 
+// --- Fix for popup offset on first click ---
+map.on('popupopen', (e) => {
+  // Force Leaflet to recalc popup position after rendering
+  setTimeout(() => {
+    e.popup.update();
+  }, 0);
+});
+
+
 const greenIcon = L.icon({
   iconUrl: 'data:image/svg+xml;base64,' + btoa(`
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 30 40">
       <path fill="#9AAA7A" d="M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25C30 7 23 0 15 0z"/>
+      <circle cx="15" cy="15" r="5" fill="#fff" />
     </svg>
   `),
   iconSize: [30, 40],
@@ -43,6 +53,7 @@ const peachIcon = L.icon({
   iconUrl: 'data:image/svg+xml;base64,' + btoa(`
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 30 40">
       <path fill="#D9A293" d="M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25C30 7 23 0 15 0z"/>
+      <circle cx="15" cy="15" r="5" fill="#fff" />
     </svg>
   `),
   iconSize: [30, 40],
