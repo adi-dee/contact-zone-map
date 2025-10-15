@@ -92,6 +92,10 @@ a:hover {
         line-height: revert;
     }
 
+    .leaflet-popup {
+      min-width: 250px;
+    }
+
     /* --- Leaflet popup styling (TCZ brand) --- */
 .leaflet-popup-content-wrapper {
   border-radius: 12px;

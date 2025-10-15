@@ -105,8 +105,8 @@ map.on("click", (e) => {
   // Add new temporary marker
   lastMarker = L.marker([lat, lng], { icon: peachIcon })
     .addTo(map)
-    .bindPopup("Selected location")
-    .openPopup();
+    // .bindPopup("Selected location")
+    // .openPopup();
 });
   // Handle form submission
 document.getElementById("pinForm").addEventListener("submit", async (e)=>{
@@ -165,14 +165,26 @@ if (imageFile) {
   }
 
   // Show pin immediately (local only)
-  let popupContent = `<b>${nickname}</b><br>${story}`;
-  if (image_url) {
-    popupContent += `<br><img src="${image_url}" style="max-width:150px; margin-top:5px;">`;
-  }
-  L.marker([lat, lng]).addTo(map).bindPopup(popupContent).openPopup();
+// Remove the temporary peach marker
+if (lastMarker) {
+  map.removeLayer(lastMarker);
+  lastMarker = null;
+}
 
-  alert("Submitted! Your pin is visible to you now and will appear for everyone once approved.");
-  e.target.reset();
+// Show the new "local" pin immediately
+let popupContent = `<b>${nickname}</b><br>${story}`;
+if (image_url) {
+  popupContent += `<br><img src="${image_url}" style="max-width:150px; margin-top:5px;">`;
+}
+
+L.marker([lat, lng], { icon: greenIcon })
+  .addTo(map)
+  .bindPopup(popupContent)
+  .openPopup();
+
+alert("Submitted! Your pin is visible to you now and will appear for everyone once approved.");
+e.target.reset();
+
 });
 
 
