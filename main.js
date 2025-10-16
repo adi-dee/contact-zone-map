@@ -182,7 +182,7 @@ L.marker([lat, lng], { icon: greenIcon })
   .bindPopup(popupContent)
   .openPopup();
 
-alert("Submitted! Your pin is visible to you now and will appear for everyone once approved.");
+alert("Submitted! Your pin will appear for everyone after Admin approved.");
 e.target.reset();
 
 });

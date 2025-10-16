@@ -83,7 +83,7 @@ a:hover {
 
     #pinForm input, #pinForm textarea, #pinForm button {
       display: block;
-      width: 100%;
+      width: 95%;
       margin-bottom: 8px;
     }
 
@@ -240,6 +240,42 @@ a:hover {
   background: none;
   padding: 4px 0;
 }
+
+/* Placeholder text styling */
+::placeholder {
+  color: var(--tcz-grey);
+  opacity: 0.8;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 300;
+}
+
+/* Make inputs and textareas look uniform */
+.form-content input[type="text"],
+.form-content input[type="email"],
+.form-content textarea {
+  width: 90%;
+  border: none;
+  background: var(--tcz-light-grey);
+  padding: 10px 6px 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--tcz-text);
+}
+
+.form-content textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Optional: subtle focus highlight */
+.form-content input:focus,
+.form-content textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tcz-light-green);
+  /* background: #fff; */
+}
+
 
 .checkbox {
   font-size: 12px;
