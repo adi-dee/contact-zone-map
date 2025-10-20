@@ -56,7 +56,7 @@ a:hover {
     }
 
     .map-container {
-      height: 80%;
+      height: 85%;
       width: 100%;
       margin-bottom: 10px;
       position: relative;
@@ -343,20 +343,32 @@ a:hover {
 
     
 @media (max-width: 480px) {
+
+  h2 {
+    margin: 5px;
+    font-size: 1.4rem;
+  }
   .contact-zone-form {
     width: 90%;
     margin: 12px 0;
     right: 0;
     bottom: 10px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
   }
 
   .contact-zone-form.collapsed {
     width: 90%;
-     margin: 0 20px;
   }
 
   .leaflet-popup-content img {
   max-width: 150px;
+}
+
+.map-container {
+  height: 90%;
 }
 
 
