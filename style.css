@@ -28,7 +28,7 @@ h1, h2 {
   font-family: 'Inter Tight', Arial, sans-serif;
   font-weight: 600;
   color: var(--tcz-green); /* main headline color accent */
-  margin-top: 0;
+  margin: 10px 0 15px 0;
 }
 
 /* Paragraphs */
