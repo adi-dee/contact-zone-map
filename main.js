@@ -48,6 +48,33 @@ const greenIcon = L.icon({
   popupAnchor: [0, -40]
 });
 
+
+// Hover version (a bit brighter green)
+const greenIconHover = L.icon({
+  iconUrl: 'data:image/svg+xml;base64,' + btoa(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 30 40">
+      <path fill="#AFC58B" d="M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25C30 7 23 0 15 0z"/>
+      <circle cx="15" cy="15" r="5" fill="#fff" />
+    </svg>
+  `),
+  iconSize: [30, 40],
+  iconAnchor: [15, 40],
+  popupAnchor: [0, -40]
+});
+
+// Active (clicked) version (bit brighter green)
+const greenIconActive = L.icon({
+  iconUrl: 'data:image/svg+xml;base64,' + btoa(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 30 40">
+      <path fill="#AFC58B" d="M15 0C7 0 0 7 0 15c0 10 15 25 15 25s15-15 15-25C30 7 23 0 15 0z"/>
+      <circle cx="15" cy="15" r="5" fill="#fff" />
+    </svg>
+  `),
+  iconSize: [30, 40],
+  iconAnchor: [15, 40],
+  popupAnchor: [0, -40]
+});
+
 // Peach temporary marker (#D9A293)
 const peachIcon = L.icon({
   iconUrl: 'data:image/svg+xml;base64,' + btoa(`
@@ -81,7 +108,16 @@ const peachIcon = L.icon({
         popupContent += `<br><br><img src="${p.image_url}" style="margin-top:5px;">`;
       }
       // const newLocal = L.marker([p.lat, p.lng]).addTo(map).bindPopup(popupContent);
-      L.marker([p.lat, p.lng], { icon: greenIcon }).addTo(map).bindPopup(popupContent);
+const marker = L.marker([p.lat, p.lng], { icon: greenIcon }).addTo(map);
+marker.bindPopup(popupContent);
+
+// Change icon color on hover
+marker.on('mouseover', () => marker.setIcon(greenIconHover));
+marker.on('mouseout', () => marker.setIcon(greenIcon));
+
+// Change icon color on click (active)
+marker.on('click', () => marker.setIcon(greenIconActive));
+marker.on('popupclose', () => marker.setIcon(greenIcon));
 
     });
   }

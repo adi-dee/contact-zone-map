@@ -316,6 +316,12 @@ a:hover {
   width: auto !important;
 }
 
+
+.leaflet-interactive:hover {
+  stroke: #d9a38f !important; /* peach outline on hover */
+  stroke-width: 3 !important;
+  cursor: pointer;
+}
 /* --- Map attribution footer --- */
 
 
