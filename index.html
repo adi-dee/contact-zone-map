@@ -18,35 +18,63 @@
         <h2 ></h2>
     </div>
 
+
 <div class="map-container">
   <div id="map"></div>
+
+<!-- Collapsible About Panel -->
+<!-- Minimal About Button / Panel -->
+<div id="aboutPanel" class="about-panel collapsed">
+  <button class="about-toggle" aria-label="About the Map">
+    <span class="icon">?</span>
+  </button>
+
+  <div class="about-content">
+    <div class="about-header">
+      <span class="icon close-icon">x</span>
+    </div>
+    <div class="about-text">
+    <p>
+      <strong>A Contact Zone</strong> is a social and cultural space where diverse and often conflicting perspectives,
+      experiences, and histories come into contact, co-exist, and are negotiated.
+    </p>
+    <p>
+      The “Mapping the Contact Zone” interactive map invites you to reflect on moments in your own life where you have
+      experienced such encounters – times of dialogue, difference, or transformation through meeting others.
+      By sharing your story, you help visualize how contact zones appear in everyday life, across cultures, and within communities.
+    </p>
+    <p>
+      This map is part of the <em>Training for the Contact Zone (TCZ)</em> project, an Erasmus+ initiative co-funded by the European Union.
+      TCZ develops training programs that help cultural practitioners, educators, and activists learn to facilitate Contact Zones.
+    </p>
+    <p>
+      Your contribution adds to this shared learning process, showing how Contact Zones can emerge anywhere – in families, classrooms,
+      workplaces, or public life – wherever people meet across lines of difference and create new understanding together.
+    </p>
+    </div>
+  </div>
+</div>
+
+
   <div id="contactZoneForm" class="contact-zone-form collapsed">
   <div class="form-toggle">
     <span class="arrow">&#x25B2;</span> <!-- up arrow -->
     <span>Add Your Contact Zone Experience</span>
   </div>
-
   <form id="pinForm" class="form-content">
-
-
-        <input type="text" id="nickname" placeholder="Nickname*" required>
-
+    <input type="text" id="nickname" placeholder="Nickname*" required>
     <textarea id="story" placeholder="Contact Zone Story (up to 92 notes)*" required></textarea>
 
     <label for="image">Upload Image (jpg/gif/png)</label>
     <input type="file" id="image" accept="image/*">
 
     <input type="email" id="email" placeholder="Email (not public)">
-
-
     <label class="checkbox">
       <input type="checkbox" id="approval"> I hereby approve to publish this data on the contact zone website...
     </label>
 
     <input type="text" id="lat" placeholder="Latitude" required>
     <input type="text" id="lng" placeholder="Longitude" required>
-
-
     <button type="submit" class="send-btn" disabled>SEND ➤</button>
   </form>
 </div>

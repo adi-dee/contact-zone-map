@@ -247,3 +247,22 @@ toggle.addEventListener('click', () => {
 approvalBox.addEventListener('change', () => {
   sendBtn.disabled = !approvalBox.checked;
 });
+
+
+
+// --- About panel toggle ---
+const aboutPanel = document.getElementById('aboutPanel');
+const aboutButton = aboutPanel.querySelector('.about-toggle');
+const aboutContent = aboutPanel.querySelector('.about-content');
+
+// Open panel
+aboutButton.addEventListener('click', () => {
+  aboutPanel.classList.remove('collapsed');
+  aboutButton.style.display = 'none';
+});
+
+// Close panel by clicking anywhere inside (including ×)
+aboutContent.addEventListener('click', () => {
+  aboutPanel.classList.add('collapsed');
+  aboutButton.style.display = 'flex';
+});
