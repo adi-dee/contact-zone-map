@@ -21,7 +21,7 @@ const map = L.map('map', {
 
 
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/">OSM</a> &copy; CARTO',
   subdomains: 'abcd',
   maxZoom: 19

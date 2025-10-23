@@ -16,7 +16,7 @@ body {
   font-size: 18px;
   line-height: 1.6;
   color: var(--tcz-text);
-  background-color: #fff;
+  background-color: var(--tcz-light-grey);
         margin: 0;
       padding: 0;
       height: 100vh;
@@ -389,8 +389,8 @@ a:hover {
 
 
 .about-toggle:hover {
-  background: #9eb3ca;
-  transform: scale(1.05);
+  background:  var(--tcz-light-grey);
+  color: var(--tcz-grey); ;
 }
 
 /* --- Expanded panel content --- */
@@ -444,7 +444,7 @@ a:hover {
 }
 
 .close-icon:hover {
-  color: #9eb3ca;
+  color: var(--tcz-light-grey);
   transform: rotate(90deg);
 }
 
