@@ -389,7 +389,7 @@ a:hover {
 
 
 .about-toggle:hover {
-  background: #b4c59e;
+  background: #9eb3ca;
   transform: scale(1.05);
 }
 
@@ -428,8 +428,8 @@ a:hover {
 }
 
 .close-icon {
-  background: var(--tcz-grey);
-  color: #fff;
+  color: var(--tcz-grey);
+  /* color: #fff; */
   font-weight: 600;
   border-radius: 50%;
   width: 26px;
@@ -444,7 +444,7 @@ a:hover {
 }
 
 .close-icon:hover {
-  background: var(--tcz-pink);
+  color: #9eb3ca;
   transform: rotate(90deg);
 }
 
