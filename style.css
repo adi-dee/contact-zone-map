@@ -179,20 +179,20 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #fff;
-  border-top: 3px solid #D9A293; /* peach accent */
+  background: var(--tcz-grey);
+  border-top: 3px solid var(--tcz-light-grey); /* peach accent */
   border-radius: 12px 12px 0 0;
   padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
-  border-top: 3px solid var(--tcz-pink);
-  color: var(--tcz-grey);
+  color: var(--tcz-light-grey);
   font-weight: 500;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 }
 
 .form-toggle:hover {
   background: #f5f5f5;
+  color:  var(--tcz-grey);
 }
 
 .form-toggle .arrow {
@@ -427,6 +427,10 @@ a:hover {
   right: 10px;
 }
 
+.icon {
+  margin-top: -2px;
+}
+
 .close-icon {
   color: var(--tcz-grey);
   /* color: #fff; */
@@ -476,6 +480,13 @@ a:hover {
     
 @media (max-width: 480px) {
 
+  .form-toggle {
+  background: #fff;
+  border-top: 3px solid #D9A293; /* peach accent */
+  border-top: 3px solid var(--tcz-pink);
+  color: var(--tcz-grey);
+}
+
   h2 {
     margin: 5px;
     font-size: 1.4rem;
@@ -484,8 +495,7 @@ a:hover {
     width: 90%;
     margin: 12px 0;
     right: 0;
-    bottom: 10px;
-
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
 
