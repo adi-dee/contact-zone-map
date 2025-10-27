@@ -2,7 +2,7 @@
   /* TCZ Brand Colours */
   --tcz-grey: #6b7a8a;
   --tcz-green: #a3b08a;
-  --tcz-pink: #d9a38f;
+  --tcz-pink: #D9A293;
   --tcz-light-grey: #e3e3e8;
   --tcz-light-green: #c7d1bf;
   --tcz-light-pink: #e8c2ba;
@@ -193,11 +193,6 @@ a:hover {
 .form-toggle:hover {
   background: #f5f5f5;
   color:  var(--tcz-grey);
-}
-
-.form-toggle .arrow {
-  color: #D9A293;
-  font-size: 16px;
 }
 
 /* Form inner content */
@@ -464,8 +459,10 @@ a:hover {
   background-color: var(--tcz-grey);
 }
 
-/* Mobile layout */
+
+    
 @media (max-width: 480px) {
+
   .about-panel {
     right: 10px;
     left: unset;
@@ -474,17 +471,17 @@ a:hover {
     top: 10px;
     width: calc(100% - 20px);
   }
-}
-
-
-    
-@media (max-width: 480px) {
 
   .form-toggle {
   background: #fff;
   border-top: 3px solid #D9A293; /* peach accent */
   border-top: 3px solid var(--tcz-pink);
   color: var(--tcz-grey);
+}
+
+.form-toggle .arrow {
+  color: #D9A293;
+  font-size: 16px;
 }
 
   h2 {
