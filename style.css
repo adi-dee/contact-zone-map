@@ -574,7 +574,7 @@ a:hover {
   }
 
   .leaflet-popup-content img {
-  max-width: 150px;
+  /* max-width: 150px; */
 }
 
 .map-container {
