@@ -6,18 +6,30 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
   // Init map
+// Define wide Europe bounds (for panning limit)
 const europeBounds = L.latLngBounds(
-  L.latLng(30, -25),  // SW corner: includes southern Spain/North Africa edge
-  L.latLng(70, 60)    // NE corner: Scandinavia/Russia border
+  L.latLng(30, -25),  // Southwest – includes Spain and a bit of North Africa
+  L.latLng(72, 60)    // Northeast – includes Scandinavia
 );
 
-// Center slightly south of Czechia (~48 N, 14 E) to focus on central-southern Europe
+// Initialize map
 const map = L.map('map', {
-  center: [48, 14],    // South-centered view
-  zoom: 4.5,           // Slightly zoomed in
-  maxBounds: europeBounds, // Restrict panning to Europe
-  maxBoundsViscosity: 0.8  // Soft “bounce” at edges
+  center: [47, 19],          // 👈 Central Europe (Hungary area)
+  zoom: 6,                   // 👈 initial focus
+  minZoom: 4,                // can zoom out a fair bit
+  maxZoom: 10,               // limit zoom-in depth
+  maxBounds: europeBounds,   // restrict extreme panning
+  maxBoundsViscosity: 0.8,   // soft “bounce” at edges
+  zoomSnap: 0.25,
+  zoomDelta: 0.5
 });
+
+// Optional: ensure the map fits bounds at first
+map.fitBounds([
+  [34, -5],   // Southwest – Greece/Italy edge
+  [56, 35]    // Northeast – Baltics edge (no Scandinavia)
+]);
+map.setZoom(6); // 👈 keeps your preferred initial zoom level
 
 
 
@@ -249,20 +261,40 @@ approvalBox.addEventListener('change', () => {
 });
 
 
-
 // --- About panel toggle ---
 const aboutPanel = document.getElementById('aboutPanel');
 const aboutButton = aboutPanel.querySelector('.about-toggle');
 const aboutContent = aboutPanel.querySelector('.about-content');
+const closeIcon = aboutPanel.querySelector('.close-icon');
 
-// Open panel
+// Open panel when clicking the hamburger icon
 aboutButton.addEventListener('click', () => {
   aboutPanel.classList.remove('collapsed');
   aboutButton.style.display = 'none';
 });
 
-// Close panel by clicking anywhere inside (including ×)
-aboutContent.addEventListener('click', () => {
+// Close panel only when clicking the × icon
+closeIcon.addEventListener('click', (e) => {
+  e.stopPropagation(); // prevent bubbling
   aboutPanel.classList.add('collapsed');
   aboutButton.style.display = 'flex';
 });
+
+
+// how to contribute tav
+
+// --- Tabs inside About panel ---
+const aboutTabs = document.querySelectorAll('.about-tabs .tab');
+const aboutTabContents = document.querySelectorAll('.tab-content');
+
+aboutTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    aboutTabs.forEach(t => t.classList.remove('active'));
+    aboutTabContents.forEach(c => c.classList.remove('active'));
+
+    tab.classList.add('active');
+    const target = tab.getAttribute('data-tab');
+    document.querySelector(`.tab-content[data-tab="${target}"]`).classList.add('active');
+  });
+});
+

@@ -180,7 +180,7 @@ a:hover {
   justify-content: center;
   gap: 8px;
   background: var(--tcz-grey);
-  border-top: 3px solid var(--tcz-light-grey); /* peach accent */
+  border-top: 3px solid var(--tcz-pink);
   border-radius: 12px 12px 0 0;
   padding: 8px 16px;
   font-size: 14px;
@@ -193,6 +193,11 @@ a:hover {
 .form-toggle:hover {
   background: #f5f5f5;
   color:  var(--tcz-grey);
+}
+
+.form-toggle .arrow {
+  color: #D9A293;
+  font-size: 16px;
 }
 
 /* Form inner content */
@@ -339,8 +344,8 @@ a:hover {
 /* --- About Panel --- */
 .about-panel {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  right: 20px;
+  top: 20px;
   width: 320px;
   background: #fff;
   border-radius: 12px;
@@ -401,7 +406,6 @@ a:hover {
 
 .about-text {
   overflow-y: auto;
-  max-height: 410px;
 }
 
 .about-content strong {
@@ -422,7 +426,7 @@ a:hover {
   right: 10px;
 }
 
-.icon {
+.about-toggle .icon {
   margin-top: -2px;
 }
 
@@ -440,6 +444,7 @@ a:hover {
   cursor: pointer;
   flex-shrink: 0;
   transition: all 0.3s ease;
+  margin-top: 11px;
 }
 
 .close-icon:hover {
@@ -459,6 +464,78 @@ a:hover {
   background-color: var(--tcz-grey);
 }
 
+/* --- add how to contribute --- */
+
+/* --- Tabs inside About panel --- */
+.about-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--tcz-light-grey);
+  margin-right: 25px;
+}
+
+.about-tabs .tab {
+  flex: 1;
+  background: var(--tcz-light-grey);
+  border: none;
+  color: var(--tcz-grey);
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 6px 6px 0 0;
+  margin-right: 4px;
+}
+
+.about-tabs .tab:last-child {
+  margin-right: 0;
+}
+
+.about-tabs .tab.active {
+  background: #fff;
+  color: var(--tcz-green);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content {
+  max-height: 410px;
+  overflow-y: scroll;
+}
+
+/* How-to styling (from before, keep consistent) */
+
+.how-to-contribute h4 {
+  color: var(--tcz-pink);
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.how-to-contribute ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.how-to-contribute li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--tcz-text);
+}
+
+.how-to-contribute small {
+  display: block;
+  margin-top: 4px;
+  color: var(--tcz-grey);
+  font-size: 13px;
+}
 
     
 @media (max-width: 480px) {
@@ -474,14 +551,8 @@ a:hover {
 
   .form-toggle {
   background: #fff;
-  border-top: 3px solid #D9A293; /* peach accent */
   border-top: 3px solid var(--tcz-pink);
   color: var(--tcz-grey);
-}
-
-.form-toggle .arrow {
-  color: #D9A293;
-  font-size: 16px;
 }
 
   h2 {

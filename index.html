@@ -14,18 +14,13 @@
 </head>
 <body>
 
-    <div class="header">
-        <h2 ></h2>
-    </div>
-
-
 <div class="map-container">
   <div id="map"></div>
 
 <!-- Collapsible About Panel -->
 <!-- Minimal About Button / Panel -->
 <div id="aboutPanel" class="about-panel collapsed">
-  <button class="about-toggle" aria-label="About the Map">
+  <button class="about-toggle" aria-label="Open info">
     <span class="icon">&#9776;</span>
   </button>
 
@@ -33,24 +28,52 @@
     <div class="about-header">
       <span class="icon close-icon">&times;</span>
     </div>
-    <div class="about-text">
-    <p>
-      <strong>A Contact Zone</strong> is a social and cultural space where diverse and often conflicting perspectives,
-      experiences, and histories come into contact, co-exist, and are negotiated.
-    </p>
-    <p>
-      The “Mapping the Contact Zone” interactive map invites you to reflect on moments in your own life where you have
-      experienced such encounters – times of dialogue, difference, or transformation through meeting others.
-      By sharing your story, you help visualize how contact zones appear in everyday life, across cultures, and within communities.
-    </p>
-    <p>
-      This map is part of the <em>Training for the Contact Zone (TCZ)</em> project, an Erasmus+ initiative co-funded by the European Union.
-      TCZ develops training programs that help cultural practitioners, educators, and activists learn to facilitate Contact Zones.
-    </p>
-    <p>
-      Your contribution adds to this shared learning process, showing how Contact Zones can emerge anywhere – in families, classrooms,
-      workplaces, or public life – wherever people meet across lines of difference and create new understanding together.
-    </p>
+
+    <!-- Tab buttons -->
+    <div class="about-tabs">
+      <button class="tab active" data-tab="contribute">How to Contribute</button>
+      <button class="tab" data-tab="about">About the Map</button>
+    </div>
+
+    <!-- Tab contents -->
+    <div class="tab-content active" data-tab="contribute">
+      <div class="how-to-contribute">
+        <h4>How to contribute:</h4>
+        <ol>
+          <li>Click on the map to select a location connected to your experience.</li>
+          <li>
+            Fill in the short form with your nickname, story, and (optionally) an image and email address.
+            <br><small>The email will not be made public. It will be kept securely in our system so that the TCZ team can contact you if we’d like to learn more about your contribution.</small>
+          </li>
+          <li>Submit your entry. Your pin will be reviewed by our admin before becoming public.</li>
+          <li>
+            You can add names of places, cities, or streets directly on the map.
+            (A search bar for specific places or coordinates may be added in future updates.)
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="tab-content" data-tab="about">
+      <div class="about-text">
+        <p>
+          <strong>A Contact Zone</strong> is a social and cultural space where diverse and often conflicting perspectives,
+          experiences, and histories come into contact, co-exist, and are negotiated.
+        </p>
+        <p>
+          The “Mapping the Contact Zone” interactive map invites you to reflect on moments in your own life where you have
+          experienced such encounters – times of dialogue, difference, or transformation through meeting others.
+          By sharing your story, you help visualize how contact zones appear in everyday life, across cultures, and within communities.
+        </p>
+        <p>
+          This map is part of the <em>Training for the Contact Zone (TCZ)</em> project, an Erasmus+ initiative co-funded by the European Union.
+          TCZ develops training programs that help cultural practitioners, educators, and activists learn to facilitate Contact Zones.
+        </p>
+        <p>
+          Your contribution adds to this shared learning process, showing how Contact Zones can emerge anywhere – in families, classrooms,
+          workplaces, or public life – wherever people meet across lines of difference and create new understandings together.
+        </p>
+      </div>
     </div>
   </div>
 </div>
