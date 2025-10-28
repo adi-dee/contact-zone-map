@@ -225,6 +225,7 @@ if (lastMarker) {
 }
 
 // Show the new "local" pin immediately
+// Show the new "local" pin immediately (local feedback)
 let popupContent = `<b>${nickname}</b><br>${story}`;
 if (image_url) {
   popupContent += `<br><img src="${image_url}" style="max-width:150px; margin-top:5px;">`;
@@ -235,8 +236,25 @@ L.marker([lat, lng], { icon: greenIcon })
   .bindPopup(popupContent)
   .openPopup();
 
-alert("Submitted! Your pin will appear for everyone after Admin approved.");
+// Reset form fields
 e.target.reset();
+
+// Collapse the form box
+formBox.classList.add("collapsed");
+const arrow = toggle.querySelector(".arrow");
+arrow.innerHTML = "&#x25B2;"; // restore up arrow when closed
+
+// Show temporary confirmation box
+const box = document.getElementById("confirmationBox");
+box.innerHTML = `
+  ✅ Thank you for sharing your story!<br>
+  It’s now pending admin review and will appear soon after approval.
+`;
+box.classList.remove("hidden");
+
+// Hide message after 5 seconds
+setTimeout(() => box.classList.add("hidden"), 5000);
+
 
 });
 

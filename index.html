@@ -14,8 +14,20 @@
 </head>
 <body>
 
+  <div class="header">
+   <a target="_blank" href="https://trainingcontactzone.eu/">
+    <img src="logo-tcz.png" class="logo-mobile" alt="Training for the Contact Zone Logo">
+  </a>  
+    <h1>Mapping the Contact Zone</h1>
+  </div>
+
 <div class="map-container">
   <div id="map"></div>
+  <a target="_blank" href="https://trainingcontactzone.eu/"><img src="logo-tcz.png" class="logo-desktop" alt="Training for the Contact Zone Logo"></a>
+    <div id="confirmationBox" class="confirmation-box hidden">
+      ✅ Thank you for your story!<br>
+      It’s now pending admin review and will appear soon after approval.
+    </div>
 
 <!-- Collapsible About Panel -->
 <!-- Minimal About Button / Panel -->
@@ -43,7 +55,7 @@
           <li>Click on the map to select a location connected to your experience.</li>
           <li>
             Fill in the short form with your nickname, story, and (optionally) an image and email address.
-            <br><small>The email will not be made public. It will be kept securely in our system so that the TCZ team can contact you if we’d like to learn more about your contribution.</small>
+            <br><span>The email will not be made public. It will be kept securely in our system so that the TCZ team can contact you if we’d like to learn more about your contribution.</span>
           </li>
           <li>Submit your entry. Your pin will be reviewed by our admin before becoming public.</li>
           <li>
@@ -101,13 +113,12 @@
     <button type="submit" class="send-btn" disabled>SEND ➤</button>
   </form>
 </div>
+</div>
 <footer class="map-footer">
   © <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> & 
   <a href="https://carto.com/" target="_blank" rel="noopener">CARTO</a> 
   | © Built & Design by <a href="mailto:didiaviram@gmail.com">Adi Aviram</a>
 </footer>
-
-</div>
 
 <!-- Leaflet -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

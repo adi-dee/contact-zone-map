@@ -17,14 +17,21 @@ body {
   line-height: 1.6;
   color: var(--tcz-text);
   background-color: var(--tcz-light-grey);
-        margin: 0;
-      padding: 0;
-      height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 
+h1 {
+  color: var(--tcz-grey);
+  margin: 5px;
+  font-size: 1.8rem;
+}
+
 /* Headlines */
-h1, h2 {
+h2 {
   font-family: 'Inter Tight', Arial, sans-serif;
   font-weight: 600;
   color: var(--tcz-green); /* main headline color accent */
@@ -32,9 +39,9 @@ h1, h2 {
 }
 
 /* Paragraphs */
-p {
-  font-weight: 300;
-  color: var(--tcz-text);
+p, li, label {
+  font-weight: 400;
+  color: black;
 }
 
 /* Links */
@@ -53,14 +60,33 @@ a:hover {
 
     .header {
         text-align: center;
+        position: relative;
     }
 
+    .logo-mobile {
+      display: none;
+    }
+
+    .logo-desktop {
+      display: block;
+      position: absolute;
+      width: 5%;
+      bottom: 20px;
+      left: 20px;
+    }
+
+
     .map-container {
-      height: 93%;
+      height: 80%;
       width: 100%;
-      margin-bottom: 10px;
       position: relative;
     }
+
+
+      .map-footer, .header {
+        height: 10%;
+      }
+
 
     #map { 
         height: 100%;
@@ -93,7 +119,7 @@ a:hover {
     }
 
     .leaflet-popup {
-      min-width: 250px;
+      width: 300px;
     }
 
     /* --- Leaflet popup styling (TCZ brand) --- */
@@ -144,7 +170,6 @@ a:hover {
   height: auto;
   border-radius: 8px;
   margin-top: 8px;
-  max-width: 200px;
 }
 
 
@@ -328,7 +353,7 @@ a:hover {
   font-family: 'Inter Tight', sans-serif;
   font-size: 12px;
   color: var(--tcz-grey);
-    margin: 8px 10px;
+  margin: 10px;
 }
 
 .map-footer a {
@@ -530,15 +555,36 @@ a:hover {
   color: var(--tcz-text);
 }
 
-.how-to-contribute small {
+.how-to-contribute span {
   display: block;
   margin-top: 4px;
-  color: var(--tcz-grey);
-  font-size: 13px;
+  font-style: italic;
+  background-color: var(--tcz-light-green);
 }
 
     
 @media (max-width: 480px) {
+
+
+
+    .map-container {
+      height: 80%;
+    }
+
+    .header {
+      height: fit-content;
+    }
+
+
+      /* .map-footer {
+        height: ;
+      } */
+
+
+   .leaflet-popup {
+      width: 220px;
+    }
+  
 
   .about-panel {
     right: 10px;
@@ -555,9 +601,11 @@ a:hover {
   color: var(--tcz-grey);
 }
 
-  h2 {
-    margin: 5px;
-    font-size: 1.4rem;
+  h1 {
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--tcz-grey);
   }
   .contact-zone-form {
     width: 90%;
@@ -573,19 +621,43 @@ a:hover {
     width: 90%;
   }
 
-  .leaflet-popup-content img {
-  /* max-width: 150px; */
+    .logo-mobile {
+      display: block;
+      position: absolute;
+      width: 10%;
+      left: 20px;
+      top: -2px;
+      z-index: 3;
+    }
+
+    .logo-desktop {
+      display: none;
+    }
+
 }
 
-.map-container {
-  height: 94%;
+.confirmation-box {
+    bottom: 50%;
+    left: 50%;
+    font-style: italic;
+    font-weight: 600;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    z-index: 2000;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.confirmation-box.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
 }
 
 
-}
-
-.map-container {
-  background-color: #b8d4e3; /* TCZ-friendly light blue */
-  filter: brightness(1.05) contrast(0.95);
-}
 
