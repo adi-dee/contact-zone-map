@@ -58,22 +58,26 @@ a:hover {
 
     
 
-    .header {
-        text-align: center;
-        position: relative;
-    }
+   .header {
+  text-align: center;
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .logo-mobile {
-      display: none;
-    }
+.logo-desktop {
+  position: absolute;
+  left: 20px;
+  width: 60px;
+  bottom: 15px;
+}
 
-    .logo-desktop {
-      display: block;
-      position: absolute;
-      width: 5%;
-      bottom: 20px;
-      left: 20px;
-    }
+.logo-mobile {
+  display: none;
+}
+
 
 
     .map-container {
@@ -563,9 +567,7 @@ a:hover {
 }
 
     
-@media (max-width: 480px) {
-
-
+@media (max-width: 768px) {
 
     .map-container {
       height: 80%;
@@ -602,11 +604,11 @@ a:hover {
 }
 
   h1 {
-    margin: 10px;
-    text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--tcz-grey);
+    margin: 5px auto;
   }
+  
   .contact-zone-form {
     width: 90%;
     margin: 12px 0;
@@ -621,18 +623,17 @@ a:hover {
     width: 90%;
   }
 
-    .logo-mobile {
-      display: block;
-      position: absolute;
-      width: 10%;
-      left: 20px;
-      top: -2px;
-      z-index: 3;
-    }
+  .logo-desktop {
+    display: none;
+  }
 
-    .logo-desktop {
-      display: none;
-    }
+  .logo-mobile {
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    width: 40px;
+  }
 
 }
 
