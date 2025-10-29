@@ -119,7 +119,7 @@ const peachIcon = L.icon({
       let name = p.title || p.nickname || "Anonymous";
       name = name.charAt(0).toUpperCase() + name.slice(1);
 
-      let popupContent = `<h3>As told by <b>${name}</b></h3>${p.description || p.story}`;
+      let popupContent = `<h3>As told by <b>${name}</b></h3><p>${p.description || p.story}</p>`;
 
       if (p.image_url) {
         popupContent += `<br><br><img src="${p.image_url}" style="margin-top:5px;">`;
