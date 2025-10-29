@@ -322,3 +322,17 @@ aboutTabs.forEach(tab => {
   });
 });
 
+// --- Cookie Consent ---
+const cookieBanner = document.getElementById('cookieBanner');
+const acceptBtn = document.getElementById('acceptCookies');
+
+if (!localStorage.getItem('cookiesAccepted')) {
+  cookieBanner.classList.remove('hidden');
+}
+
+acceptBtn.addEventListener('click', () => {
+  localStorage.setItem('cookiesAccepted', 'true');
+  cookieBanner.classList.add('hidden');
+});
+
+

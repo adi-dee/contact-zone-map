@@ -663,4 +663,56 @@ a:hover {
 }
 
 
+.cookie-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  color: var(--tcz-text);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 15px 20px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  z-index: 3000;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.cookie-banner.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cookie-banner p {
+  margin: 0;
+  display: inline;
+  flex: 1;
+}
+
+.cookie-banner a {
+  color: var(--tcz-pink);
+  text-decoration: underline;
+}
+
+.cookie-banner button {
+  background: var(--tcz-green);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: background 0.3s ease;
+}
+
+.cookie-banner button:hover {
+  background: var(--tcz-grey);
+}
+
+
 
