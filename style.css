@@ -86,8 +86,11 @@ a:hover {
       position: relative;
     }
 
+    .header {
+      height: fit-content;
+    }
 
-      .map-footer, .header {
+  .map-footer {
         height: 10%;
       }
 
