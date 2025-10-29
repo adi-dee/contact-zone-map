@@ -17,7 +17,7 @@ const map = L.map('map', {
   center: [47, 19],          // 👈 Central Europe (Hungary area)
   zoom: 6,                   // 👈 initial focus
   minZoom: 4,                // can zoom out a fair bit
-  maxZoom: 10,               // limit zoom-in depth
+  maxZoom: 18,               // limit zoom-in depth
   maxBounds: europeBounds,   // restrict extreme panning
   maxBoundsViscosity: 0.8,   // soft “bounce” at edges
   zoomSnap: 0.25,
@@ -251,6 +251,7 @@ box.innerHTML = `
   It’s now pending admin review and will appear soon after approval.
 `;
 box.classList.remove("hidden");
+
 
 // Hide message after 5 seconds
 setTimeout(() => box.classList.add("hidden"), 5000);
