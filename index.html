@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Contact Zone Map</title>
+  <title>Mapping the Contact Zone</title>
   <meta name="description" content="Explore the interactive map of Contact Zones — stories of dialogue, difference, and transformation across Europe. Share your own experience and help visualize connections.">
   <meta name="keywords" content="contact zone, interactive map, Europe, culture, Erasmus+, stories, TCZ project">
   <meta name="author" content="Training for the Contact Zone (TCZ)">
@@ -12,7 +12,7 @@
   <meta property="og:description" content="Share and explore real stories of cultural encounters and transformation across Europe.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://map.contactzone.eu/">
-
+  <link rel="icon" type="image/x-icon" href="logo-tcz.png">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
@@ -67,7 +67,7 @@
     </div>
 
 <!-- Collapsible About Panel -->
-<!-- Minimal About Button / Panel -->
+<!-- Collapsible About Panel -->
 <div id="aboutPanel" class="about-panel collapsed">
   <button class="about-toggle" aria-label="Open info">
     <span class="icon">&#9776;</span>
@@ -82,12 +82,15 @@
     <div class="about-tabs">
       <button class="tab active" data-tab="contribute">How to Contribute</button>
       <button class="tab" data-tab="about">About the Map</button>
+      <button class="tab" data-tab="ethics">Ethics</button>
     </div>
 
     <!-- Tab contents -->
     <div class="tab-content active" data-tab="contribute">
       <div class="how-to-contribute">
-        <h4>How to contribute:</h4>
+        <h4>How to contribute</h4>
+         <p>If you wish to share a story, please follow the following steps:
+       
         <ol>
           <li>Click on the map to select a location connected to your experience.</li>
           <li>
@@ -100,7 +103,9 @@
             (A search bar for specific places or coordinates may be added in future updates.)
           </li>
         </ol>
-      </div>
+        <p>In addition to sharing a story with our community, you can also explore and read the stories and through that give visibility to others’ voices; you could find a moment of reflection for your own experiences; or you could write them down privately for yourself.
+       </p>
+        </div>
     </div>
 
     <div class="tab-content" data-tab="about">
@@ -121,6 +126,29 @@
         <p>
           Your contribution adds to this shared learning process, showing how Contact Zones can emerge anywhere – in families, classrooms,
           workplaces, or public life – wherever people meet across lines of difference and create new understandings together.
+        </p>
+      </div>
+    </div>
+
+    <div class="tab-content" data-tab="ethics">
+      <div class="about-text">
+        <h4>Contributing Ethically and Safely</h4>
+        <p>
+          With the <em>Mapping the Contact Zone</em> map, we are committed to creating an ethical and
+          safe digital environment where everyone can share their experiences with confidence.
+          The following principles guide how we collect, display, and protect your stories:
+        </p>
+        <ul>
+          <li>You may choose to contribute anonymously, without sharing your real name or contact details. Providing an email address is optional and is used only if we need to contact you regarding your contribution (for example, if you request its removal).</li>
+          <li>All submissions are reviewed before publication to ensure they respect others and do not contain harmful or discriminatory content. This moderation protects openness and care within our shared digital space.</li>
+          <li>By submitting a story, you confirm that you understand how it will appear on the map and agree for it to be displayed publicly. You can withdraw this consent at any time by contacting us.</li>
+          <li>If, at any point, you wish to retract or remove your contribution, please contact us at <a href="mailto:training@contactzone.eu">training@contactzone.eu</a> using the subject line <em>Story Removal Request</em>. Your story will be removed promptly from both the website and our internal storage.</li>
+          <li>All stories remain the property of their authors. The project team will never reuse or publish contributions outside the <em>Mapping the Contact Zone</em> platform without explicit consent.</li>
+          <li>As part of an Erasmus+ project co-funded by the European Union, we are required to keep this website online for at least five years after the project’s completion. After that period, we may decide whether to continue, archive, or remove the site. Contributors who provided an email address will be notified of any such decision.</li>
+        </ul>
+        <p>
+          We are committed to treating all contributions with care, respect, and confidentiality, and to ensuring transparency and accessibility in how stories are collected, moderated, and stored.
+          If you encounter any accessibility issues or need support, please contact us.
         </p>
       </div>
     </div>
@@ -154,7 +182,7 @@
 <footer class="map-footer">
   © <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> & 
   <a href="https://carto.com/" target="_blank" rel="noopener">CARTO</a> 
-  | © Built & Design by <a href="mailto:didiaviram@gmail.com">Adi Aviram</a>
+  | © Built & Design by <a class="name-link" href="https://adi-dee.github.io/" target="_blank">Adi Aviram</a>
 </footer>
 
 

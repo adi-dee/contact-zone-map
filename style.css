@@ -365,7 +365,10 @@ a:hover {
 
 .map-footer a {
   color: #888;
-  text-decoration: none;
+}
+
+.name-link {
+  text-decoration: underline;
 }
 
 .map-footer a:hover {
